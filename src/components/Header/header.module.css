@@ -1,0 +1,20 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 28px 16px;
+	background-color: inherit;
+}
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 11px;
+	font-size: 20px;
+}
+.menu {
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-color: inherit;
+}

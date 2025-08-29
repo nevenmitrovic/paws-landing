@@ -188,3 +188,12 @@
 		color: var(--clr-black);
 	}
 }
+
+@layer utils {
+	@media (width > 768px) {
+		.wrapper {
+			max-width: 1280px;
+			margin-inline: auto;
+		}
+	}
+}

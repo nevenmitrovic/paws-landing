@@ -1,9 +1,14 @@
+import Header from '@/components/Header/Header'
+
 function App() {
 	return (
-		<div>
-			<h1>Neven</h1>
-			<p>Mitrovic</p>
-		</div>
+		<>
+			<Header />
+			<div className='wrapper'>
+				<h1>Neven</h1>
+				<p>Mitrovic</p>
+			</div>
+		</>
 	)
 }
 
