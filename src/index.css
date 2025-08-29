@@ -1,0 +1,190 @@
+@layer reset {
+	/* Box sizing rules */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Prevent font size inflation */
+	html {
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		interpolate-size: allow-keywords;
+	}
+
+	/* Remove default margin in favour of better control in authored CSS */
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	figure,
+	blockquote,
+	dl,
+	dd {
+		margin-block-end: 0;
+	}
+
+	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+	ul,
+	ol {
+		list-style: none;
+	}
+
+	/* Set core body defaults */
+	body {
+		min-height: 100vh;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased; /* improve text rendering */
+	}
+
+	/* Set shorter line heights on headings and interactive elements */
+	h1,
+	h2,
+	h3,
+	h4,
+	button,
+	input,
+	label {
+		line-height: 1.1;
+	}
+
+	/* Balance text wrapping on headings */
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-wrap: balance;
+	}
+
+	/* Text wrap pretty */
+	p {
+		text-wrap: pretty;
+	}
+
+	/* Avoid text overflow */
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+
+	/* A elements that don't have a class get default styles */
+	a:not([class]) {
+		text-decoration-skip-ink: auto;
+		color: currentColor;
+	}
+
+	/* Make images easier to work with */
+	img,
+	picture {
+		max-width: 100%;
+		display: block;
+	}
+
+	/* Inherit fonts for inputs and buttons */
+	input,
+	button,
+	textarea,
+	select {
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+	/* Make sure textareas without a rows attribute are not tiny */
+	textarea:not([rows]) {
+		min-height: 10em;
+	}
+
+	/* Anything that has been anchored to should have extra scroll margin */
+	:target {
+		scroll-margin-block: 5ex;
+	}
+
+	#root,
+	#__next {
+		isolation: isolate;
+	}
+}
+
+@layer base {
+	:root {
+		/* colors */
+
+		--clr-primary-text: #ffffff;
+		--clr-secondary-text: #101828;
+
+		--clr-black: #000000;
+		--clr-slate-gray: #667085;
+		--clr-slate-gray-2: #344054;
+		--clr-light-gray: #cecece;
+		--clr-very-light-gray: #dedede;
+		--clr-very-light-gray-2: #d0d5dd;
+
+		--clr-secondary-opacity: rgba(16, 24, 40, 0.5);
+		--clr-black-opacity: rgba(0, 0, 0, 0.7);
+		--clr-light-gray-opacity: rgba(206, 206, 206, 0.5);
+
+		--clr-button-gradient-left: var(--clr-secondary-text);
+		--clr-button-gradient-right: #233250;
+		--clr-button-border-gradient-left: #243961;
+		--clr-button-border-gradient-right: var(--clr-secondary-text);
+
+		--linear-gradient-button: linear-gradient(
+			to right,
+			var(--clr-button-gradient-left),
+			var(--clr-button-gradient-right)
+		);
+		--linear-gradient-border-button: linear-gradient(
+			to right,
+			var(--clr-button-border-gradient-left),
+			var(var(--clr-button-border-gradient-right))
+		);
+
+		/* font sizes */
+
+		--fs-header-sm: 15px;
+		--fs-header-regular: 20px;
+		--fs-header-xl: 30px;
+
+		--fs-hero-info: 14px;
+		--fs-button: 15px;
+		--fs-service-card: 25px;
+		--fs-paragraph: 15px;
+		--fs-form-button: 10.48px;
+		--fs-subscribe-button: 14.13px;
+		--fs-team-name: 12.54px;
+		--fs-team-title: 11.29px;
+
+		@media (width > 768px) {
+			--fs-header-sm: 24px;
+			--fs-header-regular: 35px;
+			--fs-header-xl: 60px;
+
+			--fs-hero-info: 16px;
+			--fs-button: 20px;
+			--fs-service-card: 50px;
+			--fs-paragraph: 21px;
+			--fs-paragraph-sm: 18px;
+			--fs-form-button: 16px;
+			--fs-subscribe-button: 16px;
+			--fs-team-name: 20px;
+			--fs-team-title: 18px;
+		}
+	}
+
+	html {
+		font-family: 'Formative Trial Medium', system-ui, -apple-system, sans-serif;
+		scroll-behavior: smooth;
+		color: var(--clr-black);
+	}
+}
