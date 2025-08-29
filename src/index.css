@@ -150,6 +150,10 @@
 			var(--clr-button-border-gradient-left),
 			var(var(--clr-button-border-gradient-right))
 		);
+		--linear-gradient-mobile-menu: linear-gradient(
+			var(--clr-button-gradient-left),
+			var(--clr-button-gradient-right)
+		);
 
 		/* other */
 
