@@ -3,14 +3,13 @@
 		url('../../assets/images/hero-img.png');
 	background-size: cover;
 	background-position: 30% 50%;
-	min-height: 609px;
+	min-height: 100vh;
 	color: var(--clr-primary-text);
 }
 .heroSection {
 	display: flex;
 	flex-direction: column;
 	padding-top: 112px;
-	min-height: 609px;
 }
 .heroTitleWrapper > h1 {
 	font-size: var(--fs-header-xl);
@@ -31,8 +30,12 @@
 	gap: 12px;
 	padding: 16px 28px;
 	color: var(--clr-primary-text-opacity);
+	font-weight: 600;
 	border: 1px solid var(--clr-primary-text);
 	border-radius: var(--border-radius);
+}
+.heroSection button:hover {
+	cursor: pointer;
 }
 .heroTitleWrapper {
 	display: flex;
@@ -46,7 +49,7 @@
 	.backgroundImg {
 		background-size: cover;
 		background-position: 30% 50%;
-		min-height: 883px;
+		min-height: 100vh;
 	}
 	.heroTitleWrapper {
 		gap: 30px;
