@@ -40,3 +40,26 @@
 	max-width: 313px;
 	padding-bottom: 50px;
 }
+
+@media (width > 768px) {
+	.backgroundImg {
+		background-size: cover;
+		background-position: 30% 50%;
+		min-height: 883px;
+	}
+	.heroTitleWrapper {
+		gap: 30px;
+		max-width: 630px;
+		padding-bottom: 30px;
+	}
+	.heroTitleWrapper > h1 {
+		line-height: 100%;
+	}
+	.heroTitleWrapper > p {
+		line-height: 1.5rem;
+	}
+	.heroSection {
+		padding-top: 161px;
+		min-height: 390px;
+	}
+}
