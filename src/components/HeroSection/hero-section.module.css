@@ -1,0 +1,42 @@
+.backgroundImg {
+	background-image: radial-gradient(circle at 60% 20%, rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0) 100%),
+		url('../../assets/images/hero-img.png');
+	background-size: cover;
+	background-position: 30% 50%;
+	min-height: 609px;
+	color: var(--clr-primary-text);
+}
+.heroSection {
+	display: flex;
+	flex-direction: column;
+	padding-top: 112px;
+}
+.heroTitleWrapper > h1 {
+	font-size: var(--fs-header-xl);
+	font-weight: 600;
+	line-height: 130%;
+}
+.heroTitleWrapper > p {
+	font-size: var(--fs-hero-info);
+	font-weight: 600;
+	line-height: 120%;
+}
+.heroSection button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background-color: inherit;
+	gap: 12px;
+	padding: 16px 28px;
+	color: var(--clr-primary-text-opacity);
+	border: 1px solid var(--clr-primary-text);
+	border-radius: var(--border-radius);
+}
+.heroTitleWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 313px;
+	padding-bottom: 50px;
+}

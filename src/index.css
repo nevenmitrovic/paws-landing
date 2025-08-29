@@ -195,10 +195,15 @@
 }
 
 @layer utils {
+	.wrapper {
+		padding-inline: 16px;
+	}
+
 	@media (width > 768px) {
 		.wrapper {
 			max-width: 1280px;
 			margin-inline: auto;
+			padding-inline: 0;
 		}
 	}
 }

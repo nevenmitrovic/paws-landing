@@ -1,13 +1,13 @@
 import Header from '@/components/Header/Header'
+import HeroSection from '@/components/HeroSection/HeroSection'
 
 function App() {
 	return (
 		<>
 			<Header />
-			<div className='wrapper'>
-				<h1>Neven</h1>
-				<p>Mitrovic</p>
-			</div>
+			<main>
+				<HeroSection />
+			</main>
 		</>
 	)
 }
