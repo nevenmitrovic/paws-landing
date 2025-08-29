@@ -133,6 +133,7 @@
 		--clr-secondary-opacity: rgba(16, 24, 40, 0.5);
 		--clr-black-opacity: rgba(0, 0, 0, 0.7);
 		--clr-light-gray-opacity: rgba(206, 206, 206, 0.5);
+		--clr-primary-text-opacity: rgba(255, 255, 255, 0.8);
 
 		--clr-button-gradient-left: var(--clr-secondary-text);
 		--clr-button-gradient-right: #233250;
@@ -149,6 +150,10 @@
 			var(--clr-button-border-gradient-left),
 			var(var(--clr-button-border-gradient-right))
 		);
+
+		/* other */
+
+		--border-radius: 50px;
 
 		/* font sizes */
 
