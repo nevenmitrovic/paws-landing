@@ -1,4 +1,8 @@
 .header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 99999;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -11,12 +15,16 @@
 	justify-content: center;
 	gap: 11px;
 	font-size: 20px;
+	font-weight: 700;
+	color: var(--clr-primary-text);
 }
-.menu {
+.mobileMenu {
 	width: 30px;
 	height: 30px;
 	border: none;
 	background-color: inherit;
+	cursor: pointer;
+	color: var(--clr-primary-text);
 }
 
 @media (width > 768px) {
@@ -44,6 +52,11 @@
 		gap: 8px;
 		padding: 4px;
 		color: var(--clr-primary-text-opacity);
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.navMenu button:hover {
+		color: var(--clr-primary-text);
 	}
 	.navAction {
 		border: none;
@@ -53,5 +66,11 @@
 		color: var(--clr-primary-text-opacity);
 		border-radius: var(--border-radius);
 		color: var(--clr-secondary-text);
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.navAction:hover {
+		background-color: inherit;
+		color: var(--clr-primary-text);
 	}
 }

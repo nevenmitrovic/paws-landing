@@ -45,7 +45,7 @@ export default function Header() {
 			</div>
 
 			{/* MOBILE MENU BUTTON */}
-			<button className={styles.menu}>
+			<button className={styles.mobileMenu}>
 				<HiMenuAlt3 size={30} />
 			</button>
 		</header>
