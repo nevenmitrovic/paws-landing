@@ -4,7 +4,7 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 15px;
-	border-bottom: 0.2px solid var(--clr-black);
+	border-bottom: 0.2px solid rgb(0, 0, 0, 0.2);
 	font-weight: 500;
 	font-size: var(--fs-header-regular);
 	color: var(--clr-secondary-text);
@@ -16,7 +16,7 @@
 
 @media (width > 768px) {
 	.sectionHeader {
-		height: 34px;
+		height: 68px;
 		align-items: center;
 	}
 	.sectionHeader > img {

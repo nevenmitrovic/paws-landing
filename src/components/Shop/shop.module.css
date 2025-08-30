@@ -40,3 +40,32 @@
 	flex-direction: column;
 	gap: 17px;
 }
+
+@media (width > 768px) {
+	.shopSection,
+	.commerce {
+		gap: 40px;
+	}
+	.commerce {
+		border: 0.2px solid rgb(0, 0, 0, 0.2);
+		margin-inline: 40px;
+		padding: 40px 20px;
+	}
+	.commerce > h3 {
+		font-size: 35px;
+		font-weight: 600;
+	}
+	.controllers {
+		justify-content: center;
+		gap: 10px;
+	}
+	.controllers button {
+		cursor: pointer;
+	}
+	.productCards {
+		display: grid;
+		grid-template-columns: repeat(4, 375px);
+		grid-template-rows: 447px;
+		overflow-x: auto;
+	}
+}
