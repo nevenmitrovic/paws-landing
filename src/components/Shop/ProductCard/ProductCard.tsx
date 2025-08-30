@@ -43,28 +43,26 @@ export default function ProductCard({
 				backgroundImage: `url(${url})`,
 			}}
 		>
-			{showLayer && (
-				<div className={styles.productDetails}>
-					<header>
-						<div>₦{formatPrice(price)}</div>
-						<CiHeart size={25} onClick={toggleFavorite} color={favorite} />
-					</header>
-					<div className={styles.productInfo}>
-						<h3>{title}</h3>
-						<p>{desc}</p>
+			<div className={`${styles.productDetails} ${showLayer ? styles.show : styles.hide}`}>
+				<header>
+					<div>₦{formatPrice(price)}</div>
+					<CiHeart size={25} onClick={toggleFavorite} color={favorite} />
+				</header>
+				<div className={styles.productInfo}>
+					<h3>{title}</h3>
+					<p>{desc}</p>
+				</div>
+				<div className={styles.productControllers}>
+					<div>
+						<button onClick={increaseQuantity}>+</button>
+						<span>{quantity}</span>
+						<button onClick={decreaseQuantity}>-</button>
 					</div>
-					<div className={styles.productControllers}>
-						<div>
-							<button onClick={increaseQuantity}>+</button>
-							<span>{quantity}</span>
-							<button onClick={decreaseQuantity}>-</button>
-						</div>
-						<div>
-							<button>Add to cart</button>
-						</div>
+					<div>
+						<button>Add to cart</button>
 					</div>
 				</div>
-			)}
+			</div>
 		</article>
 	)
 }

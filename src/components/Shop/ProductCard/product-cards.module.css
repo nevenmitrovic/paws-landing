@@ -1,5 +1,7 @@
 .productCard {
 	position: relative;
+	overflow: hidden;
+	cursor: pointer;
 }
 .productCard,
 .productDetails {
@@ -8,6 +10,10 @@
 }
 .productDetails {
 	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	transition: transform 0.5s ease-in-out;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -15,6 +21,12 @@
 	padding: 35px 16px;
 	background-color: rgb(35, 50, 80, 0.5);
 	color: var(--clr-primary-text);
+}
+.productDetails.show {
+	transform: translateY(0);
+}
+.productDetails.hide {
+	transform: translateY(100%);
 }
 .productDetails header,
 .productDetails div {
