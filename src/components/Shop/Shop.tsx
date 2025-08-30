@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import SectionHeader from '@/components/common/SectionHeader/SectionHeader'
+import Section from '@/components/common/Section/Section'
 import styles from './shop.module.css'
 import ProductCard from '@/components/Shop/ProductCard/ProductCard'
 import { useIsMobile } from '@/hooks/useIsMobile'
@@ -148,8 +148,7 @@ export default function Shop() {
 	}, [selectedCategory])
 
 	return (
-		<section id='shop' className={`wrapper sectionPaddingY ${styles.shopSection}`}>
-			<SectionHeader text='Shop' />
+		<Section id='shop' headerText='Shop'>
 			<div className={styles.commerce}>
 				<h3>Featured Products</h3>
 				<div className={styles.controllers}>
@@ -187,6 +186,6 @@ export default function Shop() {
 					)}
 				</div>
 			</div>
-		</section>
+		</Section>
 	)
 }
