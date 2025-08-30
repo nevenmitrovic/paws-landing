@@ -3,5 +3,16 @@
 	grid-template-columns: repeat(2, minmax(175px, 1fr));
 	grid-template-rows: repeat(3, 175px) 1fr;
 	gap: 6px;
-	justify-content: center;
+}
+
+@media (width > 768px) {
+	.servicesContainer {
+		display: grid;
+		grid-template-columns: repeat(2, 350px) 1fr;
+		grid-template-rows: repeat(2, 350px);
+		gap: 15px;
+		border: 0.2px solid rgb(0, 0, 0, 0.2);
+		margin-inline: 40px;
+		padding: 27px 30px;
+	}
 }
