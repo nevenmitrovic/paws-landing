@@ -40,6 +40,12 @@
 	flex-direction: column;
 	gap: 17px;
 }
+.noItems > p {
+	padding: 5px 10px;
+	font-size: var(--fs-header-regular);
+	font-weight: 600;
+	color: var(--clr-secondary-text);
+}
 
 @media (width > 768px) {
 	.shopSection,
@@ -50,6 +56,7 @@
 		border: 0.2px solid rgb(0, 0, 0, 0.2);
 		margin-inline: 40px;
 		padding: 40px 20px;
+		min-height: 739px;
 	}
 	.commerce > h3 {
 		font-size: 35px;
@@ -68,6 +75,11 @@
 		grid-template-rows: 447px;
 		padding-bottom: 28px;
 	}
+	.productCards.noItems {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
 	.productCardsContainer > button {
 		display: block;
 		border: none;
@@ -77,5 +89,8 @@
 		font-size: var(--fs-button);
 		font-weight: 600;
 		cursor: pointer;
+	}
+	.noItems > p {
+		padding: 0;
 	}
 }

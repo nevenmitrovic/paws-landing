@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import SectionHeader from '@/components/common/SectionHeader/SectionHeader'
 import styles from './shop.module.css'
@@ -9,8 +9,18 @@ import petPlateImg from '@/assets/images/pet-plate.png'
 import dogWaterImg from '@/assets/images/dog-water.png'
 import birdWaterImg from '@/assets/images/bird-water.png'
 
-const BUTTONS = ['random', 'cat', 'dogs', 'fish', 'birds']
-const PRODUCTS = {
+type ProductCategories = 'random' | 'cat' | 'dogs' | 'fish' | 'birds'
+type ProductsData = Record<Exclude<ProductCategories, 'random'>, ProductDetails[]>
+interface ProductDetails {
+	url: string
+	title: string
+	desc: string
+	price: number
+	bgPosition?: string
+}
+
+const BUTTONS: ProductCategories[] = ['random', 'cat', 'dogs', 'fish', 'birds']
+const PRODUCTS: ProductsData = {
 	cat: [
 		{
 			url: productsImg,
@@ -67,13 +77,75 @@ const PRODUCTS = {
 	fish: [],
 }
 
+// RANDOM PRODUCTS
+function getRandomCategory(): Exclude<ProductCategories, 'random'> {
+	const randomIndex = Math.floor(Math.random() * BUTTONS.length)
+	if (BUTTONS[randomIndex] === 'random' || BUTTONS[randomIndex] === 'fish') {
+		return getRandomCategory()
+	}
+
+	return BUTTONS[randomIndex]
+}
+function getRandomProduct(category: Exclude<ProductCategories, 'random'>): ProductDetails {
+	const categoryLength = PRODUCTS[category].length
+	const randomIndex = Math.floor(Math.random() * categoryLength)
+	return PRODUCTS[category][randomIndex]
+}
+function getRandomProducts(): ProductDetails[] {
+	const randomProducts: ProductDetails[] = []
+
+	while (randomProducts.length < 3) {
+		const category = getRandomCategory()
+		const randomProduct = getRandomProduct(category)
+		const isDuplicate = randomProducts.find((product) => product.title === randomProduct.title)
+		if (!isDuplicate) {
+			randomProducts.push(randomProduct)
+		}
+	}
+
+	return randomProducts
+}
+
+// FILTER PRODUCTS
+function getFilteredProducts(category: Exclude<ProductCategories, 'random'>): ProductDetails[] {
+	return PRODUCTS[category]
+}
+
 export default function Shop() {
 	const isMobile = useIsMobile()
-	const [selectedCategory, setSelectedCategory] = useState('random')
+	const [selectedCategory, setSelectedCategory] = useState<ProductCategories>('random')
+	const [filteredProducts, setFilteredProducts] = useState<ProductDetails[] | null>(null)
 
 	const handleSelectedCategory = (e: React.MouseEvent<HTMLButtonElement>) => {
-		setSelectedCategory(e.currentTarget.value)
+		setSelectedCategory(e.currentTarget.value as ProductCategories)
 	}
+	const handleNextRandom = () => setFilteredProducts(getRandomProducts())
+
+	useEffect(() => {
+		const filterProducts = () => {
+			switch (selectedCategory) {
+				case 'random':
+					setFilteredProducts(getRandomProducts())
+					break
+				case 'cat':
+					setFilteredProducts(getFilteredProducts(selectedCategory))
+					break
+				case 'fish':
+					setFilteredProducts(getFilteredProducts(selectedCategory))
+					break
+				case 'birds':
+					setFilteredProducts(getFilteredProducts(selectedCategory))
+					break
+				case 'dogs':
+					setFilteredProducts(getFilteredProducts(selectedCategory))
+					break
+				default:
+					setFilteredProducts(null)
+			}
+		}
+
+		filterProducts()
+	}, [selectedCategory])
 
 	return (
 		<section id='shop' className={`wrapper sectionPaddingY ${styles.shopSection}`}>
@@ -95,16 +167,24 @@ export default function Shop() {
 					})}
 				</div>
 				<div className={styles.productCardsContainer}>
-					<div className={styles.productCards}>
-						<ProductCard
-							backgroundPosition={PRODUCTS.cat[0].bgPosition}
-							url={PRODUCTS.cat[0].url}
-							price={PRODUCTS.cat[0].price}
-							title={PRODUCTS.cat[0].title}
-							desc={PRODUCTS.cat[0].desc}
-						/>
+					<div
+						className={`${styles.productCards} ${filteredProducts?.length === 0 && styles.noItems}`}
+					>
+						{filteredProducts?.map((product) => (
+							<ProductCard
+								key={`product-card ${product.title}`}
+								url={product.url}
+								backgroundPosition={product.bgPosition}
+								price={product.price}
+								title={product.title}
+								desc={product.desc}
+							/>
+						))}
+						{filteredProducts?.length === 0 && <p>The selected category has no items.</p>}
 					</div>
-					{!isMobile && <button>View More {`>>>`}</button>}
+					{!isMobile && selectedCategory === 'random' && (
+						<button onClick={handleNextRandom}>View More {`>>>`}</button>
+					)}
 				</div>
 			</div>
 		</section>
