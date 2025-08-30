@@ -64,8 +64,18 @@
 	}
 	.productCards {
 		display: grid;
-		grid-template-columns: repeat(4, 375px);
+		grid-template-columns: repeat(3, 375px);
 		grid-template-rows: 447px;
-		overflow-x: auto;
+		padding-bottom: 28px;
+	}
+	.productCardsContainer > button {
+		display: block;
+		border: none;
+		background-color: inherit;
+		padding: 8px;
+		margin-left: auto;
+		font-size: var(--fs-button);
+		font-weight: 600;
+		cursor: pointer;
 	}
 }

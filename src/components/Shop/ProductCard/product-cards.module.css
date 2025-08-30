@@ -1,10 +1,78 @@
 .productCard {
+	position: relative;
+}
+.productCard,
+.productDetails {
 	height: 426.73577880859375px;
 	border-radius: 10px;
-	background-image: url('../../../assets/images/products.png');
-	background-size: 200% 200%;
-	background-position: left bottom;
 }
-
-@media (width > 768px) {
+.productDetails {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 35px 16px;
+	background-color: rgb(35, 50, 80, 0.5);
+	color: var(--clr-primary-text);
+}
+.productDetails header,
+.productDetails div {
+	width: 100%;
+}
+.productDetails header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 25px;
+}
+.productDetails svg {
+	cursor: pointer;
+}
+.productInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	text-align: center;
+	white-space: pre-wrap;
+}
+.productInfo > h3 {
+	font-size: 34px;
+	font-weight: 700;
+}
+.productInfo > p {
+	font-size: 18px;
+	font-weight: 400;
+}
+.productControllers {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 13px;
+}
+.productControllers > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	border-radius: 8px;
+	background-color: var(--clr-black);
+	background: var(--linear-gradient-button);
+	border: 1px solid transparent;
+	border-image: var(--linear-gradient-border-button) 1;
+	padding: 15px 25px;
+	font-size: 20px;
+	font-weight: 400;
+	max-height: 50px;
+}
+.productControllers > div:last-child {
+	cursor: pointer;
+}
+.productControllers button {
+	border: none;
+	background-color: inherit;
+	cursor: pointer;
+	color: var(--clr-primary-text);
 }

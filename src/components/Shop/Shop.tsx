@@ -4,9 +4,68 @@ import SectionHeader from '@/components/common/SectionHeader/SectionHeader'
 import styles from './shop.module.css'
 import ProductCard from '@/components/Shop/ProductCard/ProductCard'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import productsImg from '@/assets/images/products.png'
+import petPlateImg from '@/assets/images/pet-plate.png'
+import dogWaterImg from '@/assets/images/dog-water.png'
+import birdWaterImg from '@/assets/images/bird-water.png'
 
 const BUTTONS = ['random', 'cat', 'dogs', 'fish', 'birds']
-const PRODUCTS = [{ cat: ['bottom left', 'bottom right'], dogs: ['top left', 'top right'] }]
+const PRODUCTS = {
+	cat: [
+		{
+			url: productsImg,
+			title: 'Multivitamin For Cat',
+			desc: 'Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.',
+			price: 15000,
+			bgPosition: 'bottom left',
+		},
+		{
+			url: productsImg,
+			bgPosition: 'bottom right',
+			title: 'Cat Food',
+			desc: 'Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.',
+			price: 15000,
+		},
+	],
+	dogs: [
+		{
+			url: productsImg,
+			bgPosition: 'top left',
+			title: 'Dog Food',
+			desc: 'Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.',
+			price: 15000,
+		},
+		{
+			url: productsImg,
+			bgPosition: 'top right',
+			title: 'Multivitamin For Dog',
+			desc: 'Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.',
+			price: 15000,
+		},
+		{
+			url: petPlateImg,
+			title: 'Pet Plate',
+			desc: 'Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.',
+			price: 15000,
+		},
+		{
+			url: dogWaterImg,
+			bgPosition: 'top left',
+			title: 'Dog Water',
+			desc: 'Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.',
+			price: 15000,
+		},
+	],
+	birds: [
+		{
+			url: birdWaterImg,
+			title: 'Bird Water',
+			desc: 'Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.',
+			price: 15000,
+		},
+	],
+	fish: [],
+}
 
 export default function Shop() {
 	const isMobile = useIsMobile()
@@ -35,21 +94,17 @@ export default function Shop() {
 						)
 					})}
 				</div>
-				<div className={styles.productCards}>
-					{isMobile &&
-						PRODUCTS.map((product) =>
-							product['cat'].map((bgPosition) => (
-								<ProductCard key={bgPosition} backgroundPosition={bgPosition} />
-							))
-						)}
-					{!isMobile &&
-						PRODUCTS.map((product) =>
-							Object.entries(product).map(([_key, value]) =>
-								value.map((bgPosition: string) => (
-									<ProductCard key={bgPosition} backgroundPosition={bgPosition} />
-								))
-							)
-						)}
+				<div className={styles.productCardsContainer}>
+					<div className={styles.productCards}>
+						<ProductCard
+							backgroundPosition={PRODUCTS.cat[0].bgPosition}
+							url={PRODUCTS.cat[0].url}
+							price={PRODUCTS.cat[0].price}
+							title={PRODUCTS.cat[0].title}
+							desc={PRODUCTS.cat[0].desc}
+						/>
+					</div>
+					{!isMobile && <button>View More {`>>>`}</button>}
 				</div>
 			</div>
 		</section>
