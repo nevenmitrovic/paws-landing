@@ -1,0 +1,42 @@
+.shopSection,
+.commerce {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.commerce > h3 {
+	font-size: 15px;
+	font-weight: 500;
+	padding: 10px;
+}
+.controllers {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.controllers > button.active {
+	padding: 10px 16px;
+	border-radius: 8px;
+	background-color: var(--clr-black);
+	background: var(--linear-gradient-button);
+	box-shadow: 5px 4px 10.9px 0 rgba(0, 0, 0, 0.1);
+	border: 1px solid transparent;
+	border-image: var(--linear-gradient-border-button) 1;
+	color: var(--clr-primary-text);
+}
+.controllers > button.inactive {
+	padding: 5px 10px;
+	border: none;
+	background-color: inherit;
+	color: var(--clr-black-opacity);
+}
+.active,
+.inactive {
+	font-size: var(--fs-button);
+	font-weight: 600;
+}
+.productCards {
+	display: flex;
+	flex-direction: column;
+	gap: 17px;
+}

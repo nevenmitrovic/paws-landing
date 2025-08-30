@@ -1,0 +1,26 @@
+.sectionHeader {
+	height: 34px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 15px;
+	border-bottom: 0.2px solid var(--clr-black);
+	font-weight: 500;
+	font-size: var(--fs-header-regular);
+	color: var(--clr-secondary-text);
+}
+.sectionHeader > img {
+	width: 24px;
+	height: 24px;
+}
+
+@media (width > 768px) {
+	.sectionHeader {
+		height: 34px;
+		align-items: center;
+	}
+	.sectionHeader > img {
+		width: 32px;
+		height: 32px;
+	}
+}

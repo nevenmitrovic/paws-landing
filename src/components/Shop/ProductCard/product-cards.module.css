@@ -1,0 +1,7 @@
+.productCard {
+	height: 426.73577880859375px;
+	border-radius: 10px;
+	background-image: url('../../../assets/images/products.png');
+	background-size: 200% 200%;
+	background-position: left bottom;
+}
