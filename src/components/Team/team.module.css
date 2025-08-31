@@ -1,2 +1,6 @@
 .teamSection {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 256.42572021484375px);
+	gap: 6px;
 }
