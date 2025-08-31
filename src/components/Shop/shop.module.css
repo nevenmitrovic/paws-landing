@@ -48,13 +48,11 @@
 
 @media (width > 768px) {
 	.commerce {
-		gap: 40px;
-	}
-	.commerce {
 		border: 0.2px solid rgb(0, 0, 0, 0.2);
 		margin-inline: 40px;
 		padding: 40px 20px;
 		min-height: 739px;
+		gap: 40px;
 	}
 	.commerce > h3 {
 		font-size: 35px;
