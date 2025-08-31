@@ -1,4 +1,4 @@
-import SectionHeader from '@/components/common/SectionHeader/SectionHeader'
+import SectionHeader from '@/components/common/Section/SectionHeader/SectionHeader'
 import styles from './section.module.css'
 
 interface SectionProps {

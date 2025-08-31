@@ -1,0 +1,11 @@
+.sectionGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+}
+
+@media (width > 768px) {
+	.sectionGrid > section:nth-child(1) {
+		grid-row: 2;
+	}
+}
