@@ -1,6 +1,7 @@
 import { useIsMobile } from '@/hooks/useIsMobile'
 import styles from './blog.module.css'
 import Section from '@/components/common/Section/Section'
+import YouTubePlayer from '@/components/Blog/YouTubePlayer/YouTubePlayer'
 
 export default function Blog() {
 	const isMobile = useIsMobile()
@@ -32,7 +33,7 @@ export default function Blog() {
 					</section>
 					<button>Read more</button>
 				</div>
-				{!isMobile && <div>video</div>}
+				{!isMobile && <YouTubePlayer />}
 			</div>
 		</Section>
 	)

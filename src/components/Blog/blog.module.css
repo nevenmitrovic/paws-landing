@@ -45,3 +45,30 @@
 	color: var(--clr-primary-text);
 	max-width: 104px;
 }
+
+@media (width > 768px) {
+	.blogSection {
+		gap: 64px;
+	}
+	.blogContent {
+		width: 50%;
+		gap: 48px;
+	}
+	.blogSection section:first-of-type {
+		padding-top: 32px;
+	}
+	.blogSection section:last-of-type {
+		padding-top: 0;
+	}
+	.blogContent h3 {
+		font-size: 24px;
+		padding-bottom: 16px;
+		margin-top: -16px;
+	}
+	.blogContent button {
+		padding: 20px 25px;
+		border-radius: 8px;
+		max-width: 149px;
+		cursor: pointer;
+	}
+}
