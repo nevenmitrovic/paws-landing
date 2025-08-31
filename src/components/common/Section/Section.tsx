@@ -5,12 +5,22 @@ interface SectionProps {
 	id: string
 	headerText: string
 	children: React.ReactNode
+	backgroundColor?: '--clr-primary-text' | '--clr-secondary-text'
 }
 
-export default function Section({ id, headerText, children }: SectionProps) {
+export default function Section({
+	id,
+	headerText,
+	children,
+	backgroundColor = '--clr-primary-text',
+}: SectionProps) {
 	return (
-		<section id={id} className={`wrapper ${styles.section}`}>
-			<SectionHeader text={headerText} />
+		<section
+			id={id}
+			className={`wrapper ${styles.section}`}
+			style={{ backgroundColor: `var(${backgroundColor})` }}
+		>
+			<SectionHeader text={headerText} textColor={backgroundColor} />
 			{children}
 		</section>
 	)

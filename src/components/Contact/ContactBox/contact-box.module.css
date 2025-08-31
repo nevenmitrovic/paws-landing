@@ -1,0 +1,22 @@
+.contactBox {
+	display: flex;
+	flex-direction: column;
+	gap: 10.48px;
+	width: 50%;
+	color: var(--clr-primary-text);
+	font-size: var(--fs-form-button);
+	font-weight: 600;
+}
+.contactBox > div {
+	font-size: 15.722736358642578px;
+}
+.contactBox h4 {
+	font-size: 13.1px;
+}
+.contactBox p:first-of-type {
+	color: var(--clr-light-gray);
+	font-weight: 400;
+}
+.contactBox p:last-of-type {
+	font-family: var(--font-inter);
+}
