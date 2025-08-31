@@ -4,3 +4,13 @@
 	grid-template-rows: repeat(2, 256.42572021484375px);
 	gap: 6px;
 }
+
+@media (width > 768px) {
+	.teamSection {
+		margin-top: 24px;
+		padding-inline: 32px;
+		grid-template-columns: repeat(4, 280px);
+		grid-template-rows: 430px;
+		gap: 24px;
+	}
+}
