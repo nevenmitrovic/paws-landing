@@ -7,3 +7,11 @@
 	display: flex;
 	gap: 20.96px;
 }
+
+@media (width > 768px) {
+	.contactInfo {
+		grid-template-rows: repeat(2, 142px);
+		gap: 48px;
+		margin-block: auto;
+	}
+}

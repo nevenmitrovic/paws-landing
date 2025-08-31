@@ -13,10 +13,28 @@
 .contactBox h4 {
 	font-size: 13.1px;
 }
+.contactBox p {
+	font-size: var(--fs-form-button);
+}
 .contactBox p:first-of-type {
 	color: var(--clr-light-gray);
 	font-weight: 400;
 }
 .contactBox p:last-of-type {
 	font-family: var(--font-inter);
+}
+
+@media (width > 768px) {
+	.contactBox {
+		gap: 16px;
+		width: 272px;
+	}
+	.contactBox > div {
+		font-size: 24px;
+		max-height: 24px;
+		align-items: center;
+	}
+	.contactBox h4 {
+		font-size: 20px;
+	}
 }
