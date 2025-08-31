@@ -32,7 +32,7 @@ export default function ProductCard({
 	}
 	const toggleFavorite = () => setFavorite((prev) => (prev === 'white' ? 'red' : 'white'))
 	const increaseQuantity = () => setQuantity((prev) => prev + 1)
-	const decreaseQuantity = () => setQuantity((prev) => prev - 1)
+	const decreaseQuantity = () => setQuantity((prev) => (prev > 0 ? prev - 1 : prev))
 
 	return (
 		<article
@@ -59,7 +59,9 @@ export default function ProductCard({
 					<div>
 						<button onClick={increaseQuantity}>+</button>
 						<span>{quantity}</span>
-						<button onClick={decreaseQuantity}>-</button>
+						<button disabled={quantity < 1} onClick={decreaseQuantity}>
+							-
+						</button>
 					</div>
 					<div>
 						<button>Add to cart</button>
