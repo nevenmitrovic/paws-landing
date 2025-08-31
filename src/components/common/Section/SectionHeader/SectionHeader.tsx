@@ -19,6 +19,10 @@ export default function SectionHeader({
 					textColor === '--clr-primary-text'
 						? 'var(--clr-secondary-text)'
 						: 'var(--clr-primary-text)',
+				borderBottom:
+					textColor === '--clr-primary-text'
+						? '0.2px solid rgb(0, 0, 0, 0.2)'
+						: '0.2px solid rgb(255, 255, 255, 0.2)',
 			}}
 		>
 			<img src={textColor === '--clr-primary-text' ? paws : whitePaws} alt='paws print' />

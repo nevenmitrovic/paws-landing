@@ -3,3 +3,6 @@
 	flex-direction: column;
 	gap: 41.93px;
 }
+
+@media (width > 768px) {
+}

@@ -4,15 +4,13 @@ import styles from './section-grid.module.css'
 interface SectionGridProps {
 	blog: ReactNode
 	team: ReactNode
-	contact: ReactNode
 }
 
-export default function SectionGrid({ blog, team, contact }: SectionGridProps) {
+export default function SectionGrid({ blog, team }: SectionGridProps) {
 	return (
 		<div className={styles.sectionGrid}>
 			{blog}
 			{team}
-			{contact}
 		</div>
 	)
 }

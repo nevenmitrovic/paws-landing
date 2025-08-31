@@ -4,7 +4,6 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 15px;
-	border-bottom: 0.2px solid rgb(0, 0, 0, 0.2);
 	font-weight: 500;
 	font-size: var(--fs-header-regular);
 }

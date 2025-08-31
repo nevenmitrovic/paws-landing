@@ -7,6 +7,7 @@ import Contact from '@/components/Contact/Contact'
 import Team from '@/components/Team/Team'
 import Blog from '@/components/Blog/Blog'
 import SectionGrid from '@/components/common/SectionGrid/SectionGrid'
+import FooterBackground from '@/components/common/FooterBackground/FooterBackground'
 
 function App() {
 	return (
@@ -17,7 +18,10 @@ function App() {
 				<Shop />
 				<Services />
 				<AboutUs />
-				<SectionGrid contact={<Contact />} team={<Team />} blog={<Blog />} />
+				<SectionGrid team={<Team />} blog={<Blog />} />
+				<FooterBackground>
+					<Contact />
+				</FooterBackground>
 			</main>
 		</>
 	)
