@@ -1,0 +1,9 @@
+.contactInfo {
+	display: grid;
+	grid-template-rows: repeat(2, 93.92729949951172px);
+	gap: 31.45px;
+}
+.contactInfo > div {
+	display: flex;
+	gap: 20.96px;
+}
