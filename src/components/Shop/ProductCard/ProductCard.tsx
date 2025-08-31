@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 
 import styles from './product-cards.module.css'
 import { CiHeart } from 'react-icons/ci'
@@ -19,9 +19,10 @@ export default function ProductCard({
 	title,
 	desc,
 }: ProducCardProps) {
+	const id = useId()
 	const [quantity, setQuantity] = useState(0)
 	const [favorite, setFavorite] = useState('white')
-	const { ref, showLayer } = useLayer()
+	const { ref, showLayer } = useLayer(id)
 
 	const formatPrice = (price: number) => {
 		return price.toLocaleString('en-US', {
@@ -46,7 +47,9 @@ export default function ProductCard({
 			<div className={`${styles.productDetails} ${showLayer ? styles.show : styles.hide}`}>
 				<header>
 					<div>₦{formatPrice(price)}</div>
-					<CiHeart size={25} onClick={toggleFavorite} color={favorite} />
+					<button onClick={toggleFavorite}>
+						<CiHeart size={25} color={favorite} />
+					</button>
 				</header>
 				<div className={styles.productInfo}>
 					<h3>{title}</h3>

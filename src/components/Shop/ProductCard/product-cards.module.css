@@ -38,8 +38,10 @@
 	align-items: center;
 	font-size: 25px;
 }
-.productDetails svg {
+.productDetails button {
 	cursor: pointer;
+	background-color: transparent;
+	border: none;
 }
 .productInfo {
 	display: flex;
