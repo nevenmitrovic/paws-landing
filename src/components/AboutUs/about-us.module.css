@@ -18,4 +18,35 @@
 		margin-inline: 40px;
 		padding: 40px 20px;
 	}
+	.aboutUs > div:first-child {
+		width: 50%;
+	}
+	.aboutUs > div:last-child {
+		position: relative;
+		width: 50%;
+	}
+	.aboutUs > div:last-child {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
+	div:last-child > img {
+		display: block;
+		width: 465px;
+		height: 561px;
+		border-radius: 8px;
+	}
+	.imgContainer {
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		padding: 16px;
+		border-radius: 8px;
+		background-color: var(--clr-primary-text);
+	}
+	.imgContainer > img {
+		max-width: 223px;
+		max-height: 223px;
+	}
 }

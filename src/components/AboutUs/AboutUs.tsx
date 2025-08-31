@@ -1,6 +1,8 @@
 import Section from '@/components/common/Section/Section'
 import styles from './about-us.module.css'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import catImg1 from '@/assets/images/cat-1.png'
+import catImg2 from '@/assets/images/cat-2.png'
 
 const PARAGRAPHS = [
 	'At Paws n’ Play, our journey began with a simple yet profound love for animals. Inspired by the unwavering companionship and joy they bring to our lives, we embarked on a mission to create a haven where pets and their owners alike could experience unparalleled happiness and care.',
@@ -21,7 +23,14 @@ export default function AboutUs() {
 						<p key={paragraph}>{paragraph}</p>
 					))}
 				</div>
-				{!isMobile && <div>slike</div>}
+				{!isMobile && (
+					<div>
+						<img src={catImg1} alt='cat and donut with cream' />
+						<div className={styles.imgContainer}>
+							<img src={catImg2} alt='cat and donut' />
+						</div>
+					</div>
+				)}
 			</div>
 		</Section>
 	)
