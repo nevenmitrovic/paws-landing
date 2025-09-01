@@ -174,6 +174,7 @@
 		--fs-subscribe-button: 14.13px;
 		--fs-team-name: 12.54px;
 		--fs-team-role: 11.29px;
+		--fs-label: 9.17px;
 
 		@media (width > 768px) {
 			--fs-header-sm: 24px;
@@ -189,6 +190,7 @@
 			--fs-subscribe-button: 16px;
 			--fs-team-name: 20px;
 			--fs-team-title: 18px;
+			--fs-label: 14px;
 		}
 	}
 

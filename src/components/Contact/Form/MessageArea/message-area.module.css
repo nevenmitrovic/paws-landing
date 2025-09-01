@@ -1,0 +1,23 @@
+.areaContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 3.93px;
+}
+
+.areaContainer > label {
+	font-size: 9.17px;
+	line-height: 13.1px;
+	color: var(--clr-slate-gray-2);
+}
+.areaContainer > textarea {
+	border-radius: 5.24px;
+	border: 0.66px solid var(--clr-very-light-gray-2);
+	padding: 7.86px 10.48px;
+	box-shadow: 0 0.66px 1.31px 0 rgba(16, 24, 40, 0.05);
+	outline: none;
+	border: 0.66px solid var(--clr-very-light-gray-2);
+	padding: 6.55px 9.17px;
+	box-shadow: 0 0.66px 1.31px 0 rgba(16, 24, 40, 0.05);
+	outline: none;
+	color: var(--clr-secondary-text);
+}

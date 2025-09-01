@@ -1,0 +1,16 @@
+.checkboxContainer {
+	display: flex;
+	align-items: center;
+	gap: 7.86px;
+	color: var(--clr-slate-gray);
+	font-size: var(--fs-form-button);
+}
+.checkboxContainer > input {
+	border-radius: 3.93px;
+	border: 0.66px solid var(--clr-very-light-gray-2);
+	outline: none;
+}
+.checkboxContainer > a {
+	text-decoration: underline;
+	color: var(--clr-slate-gray);
+}

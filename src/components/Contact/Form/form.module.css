@@ -1,0 +1,24 @@
+form {
+	background-color: var(--clr-primary-text);
+	border-radius: 10.48px;
+	padding: 26.2px 20.96px;
+	display: flex;
+	flex-direction: column;
+	gap: 20.96px;
+	max-width: 100%;
+}
+.inputsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 15.72px;
+}
+.inputsContainer > div:first-child {
+	display: flex;
+	gap: 20.96px;
+	justify-content: space-between;
+	align-items: center;
+}
+.inputsContainer > div:first-child > div {
+	flex: 1;
+	min-width: 0;
+}

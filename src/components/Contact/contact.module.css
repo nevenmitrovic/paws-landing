@@ -14,9 +14,4 @@
 	.contactSection > div:first-child {
 		order: 2;
 	}
-	form {
-		height: 576px;
-		width: 574px;
-		overflow: hidden;
-	}
 }

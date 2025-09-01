@@ -1,0 +1,35 @@
+.inputContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 3.93px;
+}
+.inputContainer > label {
+	font-size: var(--fs-label);
+	font-weight: 500;
+	line-height: 13.1px;
+	color: var(--clr-slate-gray-2);
+}
+.inputContainer > input {
+	border-radius: 5.24px;
+	border: 0.66px solid var(--clr-very-light-gray-2);
+	padding: 7.86px 10.48px;
+	box-shadow: 0 0.66px 1.31px 0 rgba(16, 24, 40, 0.05);
+	color: var(--clr-secondary-text);
+	outline: none;
+}
+.inputContainer > input::placeholder {
+	color: var(--clr-slate-gray);
+	font-size: var(--fs-form-button);
+	transform: translateY(-2px);
+}
+form > button {
+	padding: 13.1px 16.38px;
+	border-radius: 5px;
+	font-size: var(--fs-button);
+	background-color: var(--clr-black);
+	background: var(--linear-gradient-button);
+	border: 1px solid transparent;
+	border-image: var(--linear-gradient-border-button) 1;
+	color: var(--clr-primary-text);
+	transform: translateY(-4px);
+}
