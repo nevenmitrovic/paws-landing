@@ -5,7 +5,8 @@
 }
 
 .areaContainer > label {
-	font-size: 9.17px;
+	font-size: var(--fs-label);
+	font-weight: 500;
 	line-height: 13.1px;
 	color: var(--clr-slate-gray-2);
 }

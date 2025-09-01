@@ -32,4 +32,5 @@ form > button {
 	border-image: var(--linear-gradient-border-button) 1;
 	color: var(--clr-primary-text);
 	transform: translateY(-4px);
+	cursor: pointer;
 }
