@@ -1,0 +1,7 @@
+.footerContent {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	padding-bottom: 40px;
+	padding-top: 8px;
+}

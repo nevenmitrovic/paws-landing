@@ -1,0 +1,6 @@
+.footerLinks {
+	display: grid;
+	gap: 45px;
+	grid-template-columns: repeat(2, 144px);
+	grid-template-rows: repeat(3, 204px);
+}

@@ -1,0 +1,25 @@
+.linkCard {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	font-family: var(--font-inter);
+}
+.linkCard h4 {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 20px;
+	color: var(--clr-primary-text);
+}
+.linkCard a {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	text-decoration: none;
+	color: var(--clr-light-gray);
+}
+.linkCard > div:first-of-type {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: flex-start;
+}

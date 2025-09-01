@@ -43,17 +43,6 @@
 		-webkit-font-smoothing: antialiased; /* improve text rendering */
 	}
 
-	/* Set shorter line heights on headings and interactive elements */
-	h1,
-	h2,
-	h3,
-	h4,
-	button,
-	input,
-	label {
-		line-height: 1.1;
-	}
-
 	/* Balance text wrapping on headings */
 	h1,
 	h2,
@@ -148,7 +137,7 @@
 		--linear-gradient-border-button: linear-gradient(
 			to right,
 			var(--clr-button-border-gradient-left),
-			var(var(--clr-button-border-gradient-right))
+			var(--clr-button-border-gradient-right)
 		);
 		--linear-gradient-mobile-menu: linear-gradient(
 			var(--clr-button-gradient-left),
