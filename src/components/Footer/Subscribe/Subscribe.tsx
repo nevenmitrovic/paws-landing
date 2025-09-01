@@ -37,28 +37,30 @@ export default function Subscribe() {
 	}
 
 	return (
-		<div className={styles.subscribe}>
-			<div>
-				<h3>Join our newsletter</h3>
-				<p>Be the first to receive latest updates on promo, sales and offers</p>
+		<div className='wrapper'>
+			<div className={styles.subscribe}>
+				<div>
+					<h3>Join our newsletter</h3>
+					<p>Be the first to receive latest updates on promo, sales and offers</p>
+				</div>
+				<form onSubmit={handleSubmit(onSubmit, onInvalid)}>
+					<Input
+						name='subscribe'
+						type='email'
+						placeholder='Enter your email'
+						bgColor='var(--clr-very-light-gray-2)'
+						controllerProps={{
+							control,
+							name: 'subscribeEmail',
+							rules: {
+								required: RULES.required,
+								pattern: RULES.email,
+							},
+						}}
+					/>
+					<button type='submit'>Subscribe</button>
+				</form>
 			</div>
-			<form onSubmit={handleSubmit(onSubmit, onInvalid)}>
-				<Input
-					name='subscribe'
-					type='email'
-					placeholder='Enter your email'
-					bgColor='var(--clr-very-light-gray-2)'
-					controllerProps={{
-						control,
-						name: 'subscribeEmail',
-						rules: {
-							required: RULES.required,
-							pattern: RULES.email,
-						},
-					}}
-				/>
-				<button type='submit'>Subscribe</button>
-			</form>
 		</div>
 	)
 }
