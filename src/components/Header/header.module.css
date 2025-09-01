@@ -9,91 +9,6 @@
 	padding: 28px 16px;
 	background-color: inherit;
 }
-.logo {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 11px;
-	font-size: 20px;
-	font-weight: 700;
-	color: var(--clr-primary-text);
-}
-.mobileMenu {
-	width: 30px;
-	height: 30px;
-	border: none;
-	background-color: inherit;
-	cursor: pointer;
-	color: var(--clr-primary-text);
-}
-.mobileMenuContent {
-	position: absolute;
-	z-index: 60;
-	top: 0;
-	left: 0;
-	background-color: var(--clr-black);
-	background: var(--linear-gradient-mobile-menu, var(--clr-black));
-	width: 100vw;
-	height: 100vh;
-	transform: translateY(-100%);
-	transition: transform 0.5s ease-in-out;
-	padding: 16px;
-}
-.navMenu {
-	display: flex;
-	align-items: center;
-	gap: 32px;
-}
-.navMenu button,
-.mobileMenuContent button {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	border: none;
-	background-color: inherit;
-	gap: 8px;
-	padding: 4px;
-	color: var(--clr-primary-text-opacity);
-	font-weight: 600;
-	cursor: pointer;
-	transition: color 500ms ease;
-}
-.navMenu button:hover,
-.mobileMenuContent button:hover {
-	color: var(--clr-primary-text);
-}
-.mobileMenuContent.open {
-	transform: translateY(0);
-}
-.mobileMenuContent.close {
-	transform: translateY(-100%);
-}
-.mobileMenuContentHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: 58px;
-}
-.mobileMenuContent > ul {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	justify-content: center;
-	align-items: center;
-}
-.mobileMenuContent li {
-	font-size: var(--fs-header-regular);
-}
-.mobileMenuContent li button {
-	min-width: 120px;
-}
-.mobileMenuContentHeader > h3 {
-	display: flex;
-	gap: 20px;
-	font-size: var(--fs-header-regular);
-	font-weight: 600;
-	color: var(--clr-very-light-gray);
-}
 
 @media (width > 768px) {
 	.header {
@@ -114,7 +29,6 @@
 		border: 1px solid var(--clr-primary-text);
 		color: var(--clr-primary-text-opacity);
 		border-radius: var(--border-radius);
-		color: var(--clr-secondary-text);
 		font-weight: 600;
 		cursor: pointer;
 		transition: color 500ms ease, background-color 500ms ease;

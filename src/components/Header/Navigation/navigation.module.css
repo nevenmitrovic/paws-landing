@@ -1,0 +1,21 @@
+.navMenu {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+.navMenu button {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	border: none;
+	background-color: inherit;
+	gap: 8px;
+	padding: 4px;
+	color: var(--clr-primary-text-opacity);
+	font-weight: 600;
+	cursor: pointer;
+	transition: color 500ms ease;
+}
+.navMenu button:hover {
+	color: var(--clr-primary-text);
+}

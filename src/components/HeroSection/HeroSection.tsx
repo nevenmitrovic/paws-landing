@@ -3,7 +3,7 @@ import logo from '@/assets/images/logo.png'
 
 export default function HeroSection() {
 	return (
-		<section className={styles.backgroundImg}>
+		<section id='hero' className={styles.backgroundImg}>
 			<div className={`wrapper ${styles.heroSection}`}>
 				<div className={styles.heroTitleWrapper}>
 					<h1>Pawsitively Perfect: Where Every Pet's Dream Comes True!</h1>
