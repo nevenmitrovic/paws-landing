@@ -66,13 +66,16 @@
 	background-color: var(--clr-black);
 	background: var(--linear-gradient-button);
 	border: 1px solid transparent;
-	border-image: var(--linear-gradient-border-button) 1;
 	padding: 9px 12px;
 	font-size: 12px;
 	font-weight: 400;
 	max-height: 50px;
 	color: var(--clr-primary-text);
 	cursor: pointer;
+	transition: opacity 500ms ease;
+}
+.serviceCardDetails button:hover {
+	opacity: 0.9;
 }
 .serviceInfo {
 	display: flex;

@@ -70,7 +70,7 @@
 		max-height: 44px;
 		transform: translateY(-2px);
 		cursor: pointer;
-		transition: opacity 500 ease;
+		transition: color 500ms ease, background-color 500ms ease;
 	}
 	.subscribe > form > button:hover {
 		background-color: transparent;

@@ -33,9 +33,11 @@
 	font-weight: 600;
 	border: 1px solid var(--clr-primary-text);
 	border-radius: var(--border-radius);
+	transition: opacity 500ms ease;
 }
 .heroSection button:hover {
 	cursor: pointer;
+	opacity: 0.8;
 }
 .heroTitleWrapper {
 	display: flex;

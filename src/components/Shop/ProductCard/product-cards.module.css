@@ -75,11 +75,16 @@
 	background-color: var(--clr-black);
 	background: var(--linear-gradient-button);
 	border: 1px solid transparent;
-	border-image: var(--linear-gradient-border-button) 1;
 	padding: 15px 25px;
 	font-size: 20px;
 	font-weight: 400;
 	max-height: 50px;
+}
+.productControllers button:hover {
+	opacity: 0.8;
+}
+.productControllers button {
+	transition: opacity 500ms ease;
 }
 .productControllers > div:last-child {
 	cursor: pointer;

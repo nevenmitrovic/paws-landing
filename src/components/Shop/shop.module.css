@@ -16,12 +16,14 @@
 .controllers > button.active {
 	padding: 10px 16px;
 	border-radius: 8px;
-	background-color: var(--clr-black);
 	background: var(--linear-gradient-button);
 	box-shadow: 5px 4px 10.9px 0 rgba(0, 0, 0, 0.1);
-	border: 1px solid transparent;
-	border-image: var(--linear-gradient-border-button) 1;
 	color: var(--clr-primary-text);
+	border: 1px solid transparent;
+	transition: opacity 500ms ease;
+}
+.controllers > button:hover {
+	opacity: 0.9;
 }
 .controllers > button.inactive {
 	padding: 5px 10px;
@@ -85,6 +87,10 @@
 		font-size: var(--fs-button);
 		font-weight: 600;
 		cursor: pointer;
+		transition: 0.8 500ms ease;
+	}
+	.productCardsContainer > button:hover {
+		opacity: 0.8;
 	}
 	.noItems > p {
 		padding: 0;

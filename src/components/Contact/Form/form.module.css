@@ -29,12 +29,14 @@
 	background-color: var(--clr-black);
 	background: var(--linear-gradient-button);
 	border: 1px solid transparent;
-	border-image: var(--linear-gradient-border-button) 1;
 	color: var(--clr-primary-text);
 	transform: translateY(-4px);
 	cursor: pointer;
+	transition: opacity 500ms ease;
 }
-
+.contactForm button:hover {
+	opacity: 0.9;
+}
 @media (width > 768px) {
 	.contactForm {
 		padding: 40px 32px;

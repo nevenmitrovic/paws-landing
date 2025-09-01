@@ -56,6 +56,7 @@
 	color: var(--clr-primary-text-opacity);
 	font-weight: 600;
 	cursor: pointer;
+	transition: color 500ms ease;
 }
 .navMenu button:hover,
 .mobileMenuContent button:hover {
@@ -116,6 +117,7 @@
 		color: var(--clr-secondary-text);
 		font-weight: 600;
 		cursor: pointer;
+		transition: color 500ms ease, background-color 500ms ease;
 	}
 	.navAction:hover {
 		background-color: inherit;

@@ -41,9 +41,12 @@
 	background-color: var(--clr-black);
 	background: var(--linear-gradient-button);
 	border: 1px solid transparent;
-	border-image: var(--linear-gradient-border-button) 1;
 	color: var(--clr-primary-text);
 	max-width: 104px;
+	transition: opacity 500ms ease;
+}
+.blogContent button:hover {
+	opacity: 0.9;
 }
 
 @media (width > 768px) {
