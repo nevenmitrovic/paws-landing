@@ -1,28 +1,36 @@
-import { useController, type UseControllerProps } from 'react-hook-form'
+import { useController, type FieldValues, type UseControllerProps } from 'react-hook-form'
 
 import styles from './input.module.css'
-import { type FormValues } from '@/components/Contact/Form/Form'
 
-interface InputProps {
+interface InputProps<T extends FieldValues> {
 	name: string
-	label: string
+	label?: string
 	placeholder: string
 	type: 'text' | 'email'
-	controllerProps: UseControllerProps<FormValues>
+	controllerProps: UseControllerProps<T>
+	bgColor?: 'var(--clr-primary-text)' | 'var(--clr-very-light-gray-2)'
 }
 
-export default function Input({ name, label, type, placeholder, controllerProps }: InputProps) {
+export default function Input<T extends FieldValues>({
+	name,
+	label,
+	type,
+	bgColor = 'var(--clr-primary-text)',
+	placeholder,
+	controllerProps,
+}: InputProps<T>) {
 	const { field } = useController(controllerProps)
 
 	return (
 		<div className={styles.inputContainer}>
-			<label htmlFor={name}>{label}</label>
+			{label && <label htmlFor={name}>{label}</label>}
 			<input
 				{...field}
 				name={name}
 				type={type}
 				placeholder={placeholder}
 				value={field.value as string}
+				style={{ backgroundColor: bgColor }}
 			/>
 		</div>
 	)

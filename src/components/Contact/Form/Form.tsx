@@ -6,9 +6,9 @@ import Input from '@/components/common/Input/Input'
 import MessageArea from '@/components/Contact/Form/MessageArea/MessageArea'
 import Checkbox from '@/components/Contact/Form/Checkbox/Checkbox'
 
-const TOAST_ERROR_ID = 'toast-error'
-const TOAST_LOADING_ID = 'toast-loading'
-const TOAST_SUCCESS_ID = 'toast-success'
+export const TOAST_ERROR_ID = 'toast-error'
+export const TOAST_LOADING_ID = 'toast-loading'
+export const TOAST_SUCCESS_ID = 'toast-success'
 export const RULES = {
 	required: {
 		value: true,
@@ -60,7 +60,6 @@ export default function Form() {
 		)
 		reset()
 	}
-
 	const onInvalid = (errors: any) => {
 		const firstError = Object.values(errors)[0] as any
 		toast.error(firstError?.message, {
@@ -69,7 +68,7 @@ export default function Form() {
 	}
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit, onInvalid)}>
+		<form className={styles.contactForm} onSubmit={handleSubmit(onSubmit, onInvalid)}>
 			<div className={styles.inputsContainer}>
 				<div>
 					<Input

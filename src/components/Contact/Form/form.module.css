@@ -1,4 +1,4 @@
-form {
+.contactForm {
 	background-color: var(--clr-primary-text);
 	border-radius: 10.48px;
 	padding: 26.2px 20.96px;
@@ -22,7 +22,7 @@ form {
 	flex: 1;
 	min-width: 0;
 }
-form > button {
+.contactForm > button {
 	padding: 13.1px 16.38px;
 	border-radius: 5px;
 	font-size: var(--fs-button);
@@ -36,7 +36,7 @@ form > button {
 }
 
 @media (width > 768px) {
-	form {
+	.contactForm {
 		padding: 40px 32px;
 		gap: 32px;
 	}

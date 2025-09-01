@@ -10,6 +10,7 @@ import Team from '@/components/Team/Team'
 import Blog from '@/components/Blog/Blog'
 import SectionGrid from '@/components/common/SectionGrid/SectionGrid'
 import FooterBackground from '@/components/common/FooterBackground/FooterBackground'
+import Footer from '@/components/Footer/Footer'
 
 function App() {
 	return (
@@ -25,6 +26,9 @@ function App() {
 					<Contact />
 				</FooterBackground>
 			</main>
+			<FooterBackground>
+				<Footer />
+			</FooterBackground>
 			<ToastContainer />
 		</>
 	)

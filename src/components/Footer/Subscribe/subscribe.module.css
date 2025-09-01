@@ -1,0 +1,41 @@
+.subscribe {
+	border-top: 0.2px solid rgb(0, 0, 0, 0.2);
+	padding: 40px 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+.subscribe > form {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+}
+.subscribe > div {
+	color: var(--clr-primary-text);
+}
+.subscribe h3 {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 30px;
+}
+.subscribe p {
+	font-size: 13px;
+	line-height: 110.00000000000001%;
+	color: var(--clr-light-gray);
+}
+.subscribe > form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.subscribe > form > button {
+	border-radius: 7.07px;
+	border: 0.88px solid var(--clr-very-light-gray-2);
+	box-shadow: 0px 0.88px 1.77px 0px rgba(16, 24, 40, 0.05);
+	padding: 8.83px 0;
+	font-size: var(--fs-subscribe-button);
+	color: var(--clr-slate-gray-2);
+	font-family: var(--font-inter);
+	font-weight: 600;
+	line-height: 21.2px;
+}
