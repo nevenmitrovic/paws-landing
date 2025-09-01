@@ -8,8 +8,9 @@ import productsImg from '@/assets/images/products.png'
 import petPlateImg from '@/assets/images/pet-plate.png'
 import dogWaterImg from '@/assets/images/dog-water.png'
 import birdWaterImg from '@/assets/images/bird-water.png'
+import { useCategoryContext } from '@/contexts/CategoryContext'
 
-type ProductCategories = 'random' | 'cat' | 'dogs' | 'fish' | 'birds'
+export type ProductCategories = 'random' | 'cat' | 'dogs' | 'fish' | 'birds'
 type ProductsData = Record<Exclude<ProductCategories, 'random'>, ProductDetails[]>
 interface ProductDetails {
 	url: string
@@ -19,7 +20,7 @@ interface ProductDetails {
 	bgPosition?: string
 }
 
-const BUTTONS: ProductCategories[] = ['random', 'cat', 'dogs', 'fish', 'birds']
+export const CATEGORY_BUTTONS: ProductCategories[] = ['random', 'cat', 'dogs', 'fish', 'birds']
 const PRODUCTS: ProductsData = {
 	cat: [
 		{
@@ -79,12 +80,12 @@ const PRODUCTS: ProductsData = {
 
 // RANDOM PRODUCTS
 function getRandomCategory(): Exclude<ProductCategories, 'random'> {
-	const randomIndex = Math.floor(Math.random() * BUTTONS.length)
-	if (BUTTONS[randomIndex] === 'random' || BUTTONS[randomIndex] === 'fish') {
+	const randomIndex = Math.floor(Math.random() * CATEGORY_BUTTONS.length)
+	if (CATEGORY_BUTTONS[randomIndex] === 'random' || CATEGORY_BUTTONS[randomIndex] === 'fish') {
 		return getRandomCategory()
 	}
 
-	return BUTTONS[randomIndex]
+	return CATEGORY_BUTTONS[randomIndex]
 }
 function getRandomProduct(category: Exclude<ProductCategories, 'random'>): ProductDetails {
 	const categoryLength = PRODUCTS[category].length
@@ -113,12 +114,9 @@ function getFilteredProducts(category: Exclude<ProductCategories, 'random'>): Pr
 
 export default function Shop() {
 	const isMobile = useIsMobile()
-	const [selectedCategory, setSelectedCategory] = useState<ProductCategories>('random')
+	const { selectedCategory, handleSelectedCategory } = useCategoryContext()
 	const [filteredProducts, setFilteredProducts] = useState<ProductDetails[] | null>(null)
 
-	const handleSelectedCategory = (e: React.MouseEvent<HTMLButtonElement>) => {
-		setSelectedCategory(e.currentTarget.value as ProductCategories)
-	}
 	const handleNextRandom = () => setFilteredProducts(getRandomProducts())
 
 	useEffect(() => {
@@ -152,7 +150,7 @@ export default function Shop() {
 			<div className={styles.commerce}>
 				<h3>Featured Products</h3>
 				<div className={styles.controllers}>
-					{BUTTONS.map((button) => {
+					{CATEGORY_BUTTONS.map((button) => {
 						return (
 							<button
 								key={button}

@@ -11,21 +11,25 @@ import Blog from '@/components/Blog/Blog'
 import SectionGrid from '@/components/common/SectionGrid/SectionGrid'
 import FooterBackground from '@/components/common/FooterBackground/FooterBackground'
 import Footer from '@/components/Footer/Footer'
+import { CategoryContextProvider } from './contexts/CategoryContext'
 
 function App() {
 	return (
 		<>
-			<Header />
-			<main>
-				<HeroSection />
-				<Shop />
-				<Services />
-				<AboutUs />
-				<SectionGrid team={<Team />} blog={<Blog />} />
-				<FooterBackground>
-					<Contact />
-				</FooterBackground>
-			</main>
+			<CategoryContextProvider>
+				<Header />
+				<main>
+					<HeroSection />
+					<Shop />
+
+					<Services />
+					<AboutUs />
+					<SectionGrid team={<Team />} blog={<Blog />} />
+					<FooterBackground>
+						<Contact />
+					</FooterBackground>
+				</main>
+			</CategoryContextProvider>
 			<FooterBackground>
 				<Footer />
 			</FooterBackground>
