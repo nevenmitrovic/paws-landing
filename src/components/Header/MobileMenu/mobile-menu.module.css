@@ -75,3 +75,9 @@
 	left: 17%;
 	color: var(--clr-light-gray);
 }
+.dropdownMobile {
+	color: var(--clr-primary-text);
+}
+.dropdownMobile button {
+	font-size: 14px;
+}

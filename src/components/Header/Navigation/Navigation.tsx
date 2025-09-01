@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'
@@ -9,44 +9,26 @@ import { useCategoryContext } from '@/contexts/CategoryContext'
 export default function Navigation() {
 	const [openShop, setOpenShop] = useState(false)
 	const [openServices, setOpenServices] = useState(false)
-	const shopRef = useRef<null | HTMLButtonElement>(null)
-	const servicesRef = useRef<null | HTMLButtonElement>(null)
 	const isMobile = useIsMobile()
 	const { handleSelectedCategory } = useCategoryContext()
 
-	const toggleShop = useCallback(
-		(e: React.MouseEvent<HTMLButtonElement>) => {
-			handleSelectedCategory(e)
-			setOpenShop((prev) => !prev)
-		},
-		[handleSelectedCategory]
-	)
-	const toggleShopMain = useCallback(() => {
+	const handleShop = (e: React.MouseEvent<HTMLButtonElement>) => {
+		handleSelectedCategory(e)
+		setOpenServices(false)
+		toggleShop()
+	}
+	const handleService = () => {
+		toggleServices()
+		setOpenShop(false)
+	}
+	const toggleShop = () => {
+		setOpenServices(false)
 		setOpenShop((prev) => !prev)
-	}, [])
-	const toggleServices = useCallback(() => setOpenServices((prev) => !prev), [])
-
-	useEffect(() => {
-		const shop = shopRef.current
-		const services = servicesRef.current
-
-		if (shop) {
-			shop.addEventListener('click', toggleShopMain)
-		}
-
-		if (services) {
-			services.addEventListener('click', toggleServices)
-		}
-
-		return () => {
-			if (shop) {
-				shop.removeEventListener('click', toggleShopMain)
-			}
-			if (services) {
-				services.removeEventListener('click', toggleServices)
-			}
-		}
-	}, [openShop, openServices, toggleShopMain, toggleServices])
+	}
+	const toggleServices = () => {
+		setOpenShop(false)
+		setOpenServices((prev) => !prev)
+	}
 
 	return (
 		<>
@@ -54,7 +36,7 @@ export default function Navigation() {
 				<nav>
 					<ul className={styles.navMenu}>
 						<li>
-							<button ref={shopRef}>
+							<button onClick={toggleShop}>
 								Shop {!openShop ? <FaAngleDown size={20} /> : <FaAngleUp size={20} />}
 							</button>
 							{openShop && (
@@ -62,7 +44,7 @@ export default function Navigation() {
 									{CATEGORY_BUTTONS.map((button) => {
 										return (
 											<a key={`link-${button}`} href='#shop'>
-												<button onClick={toggleShop} value={button}>
+												<button onClick={handleShop} value={button}>
 													{button.charAt(0).toUpperCase() + button.slice(1)}
 												</button>
 											</a>
@@ -72,25 +54,25 @@ export default function Navigation() {
 							)}
 						</li>
 						<li>
-							<button ref={servicesRef}>
+							<button onClick={toggleServices}>
 								Services {!openServices ? <FaAngleDown size={20} /> : <FaAngleUp size={20} />}
 							</button>
 							{openServices && (
 								<div className={styles.dropdown}>
 									<a href='#services'>
-										<button onClick={toggleServices}>Grooming</button>
+										<button onClick={handleService}>Grooming</button>
 									</a>
 									<a href='#services'>
-										<button onClick={toggleServices}>Boarding</button>
+										<button onClick={handleService}>Boarding</button>
 									</a>
 									<a href='#services'>
-										<button onClick={toggleServices}>Veterinary</button>
+										<button onClick={handleService}>Veterinary</button>
 									</a>
 									<a href='#services'>
-										<button onClick={toggleServices}>Training</button>
+										<button onClick={handleService}>Training</button>
 									</a>
 									<a href='#services'>
-										<button onClick={toggleServices}>Adoption</button>
+										<button onClick={handleService}>Adoption</button>
 									</a>
 								</div>
 							)}
