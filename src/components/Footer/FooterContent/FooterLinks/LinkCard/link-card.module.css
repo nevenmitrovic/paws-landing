@@ -16,6 +16,11 @@
 	line-height: 24px;
 	text-decoration: none;
 	color: var(--clr-light-gray);
+	transition: color 500ms ease;
+}
+.linkCard a:hover {
+	cursor: pointer;
+	color: var(--clr-primary-text);
 }
 .linkCard > div:first-of-type {
 	display: flex;
