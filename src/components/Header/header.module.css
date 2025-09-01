@@ -7,14 +7,28 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 28px 16px;
+	transition: background-color 500ms ease;
+}
+.bgScroll {
+	background-color: var(--clr-black);
+	background: var(--linear-gradient-mobile-menu, var(--clr-black));
+	color: var(--clr-primary-text);
+}
+.bgInitial {
 	background-color: inherit;
 }
 
 @media (width > 768px) {
 	.header {
-		max-width: 1280px;
-		margin-inline: auto;
+		justify-content: center;
 		padding: 18px 0;
+	}
+	.headerContent {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		max-width: 1280px;
 	}
 	.content {
 		display: flex;
