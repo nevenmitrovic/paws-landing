@@ -96,13 +96,19 @@ export default function MobileMenu() {
 							)}
 						</li>
 						<li>
-							<button>About us</button>
+							<a href='#about-us'>
+								<button>About us</button>
+							</a>
 						</li>
 						<li>
-							<button>Blog</button>
+							<a href='#blog'>
+								<button>Blog</button>
+							</a>
 						</li>
 						<li>
-							<button>Contact</button>
+							<a href='#contact'>
+								<button>Contact</button>
+							</a>
 						</li>
 					</ul>
 
