@@ -1,0 +1,24 @@
+.footerSocial {
+	border-top: 0.2px solid var(--clr-light-gray-opacity);
+	padding: 20px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	gap: 10px;
+	color: var(--clr-light-gray);
+}
+.footerSocial > p {
+	font-family: var(--font-inter);
+	line-height: 24px;
+	text-align: center;
+}
+.footerSocial a {
+	font-size: 24px;
+}
+.footerSocial > nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+}
