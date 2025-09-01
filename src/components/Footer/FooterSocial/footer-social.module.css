@@ -1,6 +1,6 @@
 .footerSocial {
 	border-top: 0.2px solid var(--clr-light-gray-opacity);
-	padding: 20px 14px;
+	padding: 20px 14px 40px 14px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
