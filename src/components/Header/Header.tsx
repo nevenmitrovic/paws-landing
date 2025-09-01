@@ -1,5 +1,4 @@
 import styles from './header.module.css'
-import { FaAngleDown, FaAngleUp } from 'react-icons/fa'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import MobileMenu from '@/components/Header/MobileMenu/MobileMenu'
 import Navigation from '@/components/Header/Navigation/Navigation'
@@ -16,7 +15,9 @@ export default function Header() {
 			</div>
 			{!isMobile && (
 				<div>
-					<button className={styles.navAction}>GET STARTED</button>
+					<a href='#shop'>
+						<button className={styles.navAction}>GET STARTED</button>
+					</a>
 				</div>
 			)}
 			<MobileMenu />

@@ -15,9 +15,11 @@ export default function HeroSection() {
 					</p>
 				</div>
 				<div>
-					<button>
-						Shop Now <img src={logo} alt='paws' height='22px' width='22px' />
-					</button>
+					<a href='#shop'>
+						<button>
+							Shop Now <img src={logo} alt='paws' height='22px' width='22px' />
+						</button>
+					</a>
 				</div>
 			</div>
 		</section>

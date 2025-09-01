@@ -188,6 +188,10 @@
 		scroll-behavior: smooth;
 		color: var(--clr-black);
 	}
+
+	a {
+		text-decoration: none;
+	}
 }
 
 @layer utils {

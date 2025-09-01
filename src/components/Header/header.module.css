@@ -27,7 +27,7 @@
 		background-color: var(--clr-primary-text);
 		padding: 10px 18px;
 		border: 1px solid var(--clr-primary-text);
-		color: var(--clr-primary-text-opacity);
+		color: var(--clr-secondary-text);
 		border-radius: var(--border-radius);
 		font-weight: 600;
 		cursor: pointer;
