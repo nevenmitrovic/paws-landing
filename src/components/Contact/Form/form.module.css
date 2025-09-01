@@ -22,3 +22,14 @@ form {
 	flex: 1;
 	min-width: 0;
 }
+form > button {
+	padding: 13.1px 16.38px;
+	border-radius: 5px;
+	font-size: var(--fs-button);
+	background-color: var(--clr-black);
+	background: var(--linear-gradient-button);
+	border: 1px solid transparent;
+	border-image: var(--linear-gradient-border-button) 1;
+	color: var(--clr-primary-text);
+	transform: translateY(-4px);
+}
