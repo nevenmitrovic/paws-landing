@@ -34,3 +34,16 @@ form > button {
 	transform: translateY(-4px);
 	cursor: pointer;
 }
+
+@media (width > 768px) {
+	form {
+		padding: 40px 32px;
+		gap: 32px;
+	}
+	.inputsContainer {
+		gap: 24px;
+	}
+	.inputsContainer > div:first-child {
+		gap: 24px;
+	}
+}

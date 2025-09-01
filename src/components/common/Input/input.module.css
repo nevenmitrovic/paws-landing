@@ -22,3 +22,12 @@
 	font-size: var(--fs-form-button);
 	transform: translateY(-2px);
 }
+
+@media (width > 768px) {
+	.inputContainer {
+		gap: 6px;
+	}
+	.inputContainer > input::placeholder {
+		transform: translateY(-1px);
+	}
+}
