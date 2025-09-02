@@ -7,7 +7,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 28px 16px;
-	transition: background-color 500ms ease;
+	transition: background-color 500ms ease, border-bottom 500ms ease;
 }
 .bgScroll {
 	background-color: var(--clr-secondary-text);
@@ -17,6 +17,10 @@
 }
 .bgImportant {
 	background-color: var(--clr-secondary-text) !important;
+}
+.bgScroll,
+.bgImportant {
+	border-bottom: 1px solid var(--clr-slate-gray-2);
 }
 
 @media (width > 768px) {
