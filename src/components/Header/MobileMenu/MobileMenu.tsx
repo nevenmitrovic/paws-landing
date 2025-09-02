@@ -95,17 +95,17 @@ export default function MobileMenu() {
 						</li>
 						<li>
 							<a href='#about-us'>
-								<button>About us</button>
+								<button onClick={toggleMobileMenu}>About us</button>
 							</a>
 						</li>
 						<li>
 							<a href='#blog'>
-								<button>Blog</button>
+								<button onClick={toggleMobileMenu}>Blog</button>
 							</a>
 						</li>
 						<li>
 							<a href='#contact'>
-								<button>Contact</button>
+								<button onClick={toggleMobileMenu}>Contact</button>
 							</a>
 						</li>
 					</ul>
