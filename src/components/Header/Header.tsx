@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import styles from './header.module.css'
 import { useIsMobile } from '@/hooks/useIsMobile'
@@ -8,6 +8,7 @@ import Logo from '@/components/Header/Logo/Logo'
 
 export default function Header() {
 	const [color, setColor] = useState(false)
+	const [dropdownsTrigger, setDropdownsTrigger] = useState(false)
 	const isMobile = useIsMobile()
 
 	const handleColor = () => {
@@ -17,6 +18,12 @@ export default function Header() {
 			setColor(false)
 		}
 	}
+	const onDropdownOpen = useCallback(() => {
+		setDropdownsTrigger(true)
+	}, [])
+	const onDropdownClose = useCallback(() => {
+		setDropdownsTrigger(false)
+	}, [])
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleColor)
@@ -25,12 +32,16 @@ export default function Header() {
 	}, [])
 
 	return (
-		<header className={`${styles.header} ${color ? styles.bgScroll : styles.bgInitial}`}>
+		<header
+			className={`${styles.header} ${color ? styles.bgScroll : styles.bgInitial} ${
+				dropdownsTrigger ? styles.bgImportant : ''
+			}`}
+		>
 			{!isMobile ? (
 				<div className={styles.headerContent}>
 					<Logo />
 					<div className={styles.content}>
-						<Navigation />
+						<Navigation onDropdownOpen={onDropdownOpen} onDropdownClose={onDropdownClose} />
 					</div>
 					<div>
 						<a href='#shop'>
@@ -43,7 +54,7 @@ export default function Header() {
 				<>
 					<Logo />
 					<div className={styles.content}>
-						<Navigation />
+						<Navigation onDropdownOpen={onDropdownOpen} onDropdownClose={onDropdownClose} />
 					</div>
 					<MobileMenu />
 				</>

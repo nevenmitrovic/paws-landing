@@ -57,43 +57,41 @@ export default function MobileMenu() {
 							<button onClick={toggleMobileShopMain}>
 								Shop {!openShop ? <FaAngleDown size={20} /> : <FaAngleUp size={20} />}
 							</button>
-							{openShop && (
-								<div className={styles.dropdownMobile}>
-									{CATEGORY_BUTTONS.map((button) => {
-										return (
-											<a key={`mobile-link-${button}`} href='#shop'>
-												<button onClick={toggleShop} value={button}>
-													{button.charAt(0).toUpperCase() + button.slice(1)}
-												</button>
-											</a>
-										)
-									})}
-								</div>
-							)}
+							<div className={`${styles.dropdownMobile} ${openShop ? styles.open : styles.close}`}>
+								{CATEGORY_BUTTONS.map((button) => {
+									return (
+										<a key={`mobile-link-${button}`} href='#shop'>
+											<button onClick={toggleShop} value={button}>
+												{button.charAt(0).toUpperCase() + button.slice(1)}
+											</button>
+										</a>
+									)
+								})}
+							</div>
 						</li>
 						<li>
 							<button onClick={toggleMobileServices}>
 								Services {!openServices ? <FaAngleDown size={20} /> : <FaAngleUp size={20} />}
 							</button>
-							{openServices && (
-								<div className={styles.dropdownMobile}>
-									<a href='#services'>
-										<button onClick={handleServiceClick}>Grooming</button>
-									</a>
-									<a href='#services'>
-										<button onClick={handleServiceClick}>Boarding</button>
-									</a>
-									<a href='#services'>
-										<button onClick={handleServiceClick}>Veterinary</button>
-									</a>
-									<a href='#services'>
-										<button onClick={handleServiceClick}>Training</button>
-									</a>
-									<a href='#services'>
-										<button onClick={handleServiceClick}>Adoption</button>
-									</a>
-								</div>
-							)}
+							<div
+								className={`${styles.dropdownMobile} ${openServices ? styles.open : styles.close}`}
+							>
+								<a href='#services'>
+									<button onClick={handleServiceClick}>Grooming</button>
+								</a>
+								<a href='#services'>
+									<button onClick={handleServiceClick}>Boarding</button>
+								</a>
+								<a href='#services'>
+									<button onClick={handleServiceClick}>Veterinary</button>
+								</a>
+								<a href='#services'>
+									<button onClick={handleServiceClick}>Training</button>
+								</a>
+								<a href='#services'>
+									<button onClick={handleServiceClick}>Adoption</button>
+								</a>
+							</div>
 						</li>
 						<li>
 							<a href='#about-us'>

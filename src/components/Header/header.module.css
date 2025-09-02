@@ -10,12 +10,13 @@
 	transition: background-color 500ms ease;
 }
 .bgScroll {
-	background-color: var(--clr-black);
-	background: var(--linear-gradient-mobile-menu, var(--clr-black));
-	color: var(--clr-primary-text);
+	background-color: var(--clr-secondary-text);
 }
 .bgInitial {
 	background-color: inherit;
+}
+.bgImportant {
+	background-color: var(--clr-secondary-text) !important;
 }
 
 @media (width > 768px) {

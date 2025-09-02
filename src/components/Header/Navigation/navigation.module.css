@@ -24,14 +24,16 @@
 }
 .dropdown {
 	position: absolute;
-	top: 120%;
+	top: 110%;
 	z-index: 50;
-	padding: 4px;
+	overflow: hidden;
 	background-color: var(--clr-black);
 	background: var(--linear-gradient-mobile-menu, var(--clr-black));
 	color: var(--clr-primary-text);
-	opacity: 0.9;
 	border-radius: 8px;
+	max-height: 0;
+	opacity: 0;
+	transition: max-height 500ms ease-in-out, opacity 100ms ease-in-out;
 }
 .dropdown button {
 	width: 100%;
@@ -42,4 +44,12 @@
 }
 .dropdown button:hover {
 	color: var(--clr-primary-text);
+}
+.dropdown.open {
+	max-height: 153px;
+	opacity: 1;
+}
+.dropdown.close {
+	max-height: 0;
+	opacity: 0;
 }

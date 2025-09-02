@@ -71,13 +71,25 @@
 	position: absolute;
 	z-index: 60;
 	width: 100%;
-	bottom: 2%;
+	bottom: 5%;
 	left: 17%;
 	color: var(--clr-light-gray);
 }
 .dropdownMobile {
 	color: var(--clr-primary-text);
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 500ms ease-in-out, opacity 500ms ease-in-out;
+	opacity: 0;
 }
 .dropdownMobile button {
-	font-size: 14px;
+	font-size: 16px;
+}
+.dropdownMobile.open {
+	max-height: 145px;
+	opacity: 1;
+}
+.dropdownMobile.close {
+	max-height: 0;
+	opacity: 0;
 }
